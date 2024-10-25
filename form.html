@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Form for entering an email with required validation -->
+  <h1>Enter Your Email</h1>
+  <form>
+    <label for="email">Email:</label> <!-- Label associated with the email input using 'for' -->
+    <input type="email" id="email" name="email" placeholder="enter your email" required aria-required="true" aria-label="Enter your email"> <!-- ARIA attribute added to indicate that this field is required for screen readers -->
+    <button type="submit">Submit</button> 
+  </form>
+
+  <!-- Form for entering a numerical quantity with min and max constraints -->
+  <h1>Enter numbers</h1>
+  <form>
+    <label for="quantity">Enter a quantity:</label> <!-- Label associated with the number input using 'for' -->
+    <input type="number" id="quantity" name="quantity" placeholder="e.g, 10" min="1" max="100" step="1" required aria-required="true" aria-labelledby="quantity"> <!-- ARIA attribute to describe the input for screen readers -->
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Form for selecting a date within a specified range -->
+  <h1>Input date</h1>
+  <form>
+    <label for="date">Enter a date:</label> <!-- Label associated with the date input using 'for' -->
+    <input type="date" id="date" name="date" placeholder="Enter a valid date" min="2024-01-01" max="2024-12-31" required aria-required="true" aria-label="Select a date between January 1st and December 31st, 2024"> <!-- ARIA attribute to enhance screen reader description -->
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Range input for selecting a rating, with dynamic value display -->
+  <h1>Choose a rating</h1>
+  <form>
+    <label for="rating">Rate your experience (1-10):</label> <!-- Label associated with the range input using 'for' -->
+    <input type="range" id="rating" name="rating" min="1" max="10" step="1" value="5" oninput="rangeValue.value = this.value" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5"> <!-- ARIA attributes to describe the range values for screen readers -->
+    <output id="rangeValue">5</output>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Form for selecting a color using a color picker -->
+  <h1>Pick a Color</h1>
+  <form>
+    <label for="favcolor">Select your favorite color:</label> <!-- Label associated with the color input using 'for' -->
+    <input type="color" id="favcolor" name='favcolor' placeholder="Enter a color" value="#ff0000" aria-label="Choose your favorite color"> <!-- ARIA label to describe the color input for screen readers -->
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <br><br>
+  
+  <!-- Form for user experience details with multiple input types -->
+  <form>
+    <fieldset>
+      <legend><h1>User Experience</h1></legend>
+      
+      <!-- Select Menu for Programming Languages -->
+      <label for="user-experience">What's your favorite programming language:</label> <!-- Label associated with the select input using 'for' -->
+      <select id="user-experience" name="user-experience" aria-label="Select your favorite programming language"> <!-- ARIA label to assist screen reader users -->
+        <option value="c++">C++</option>
+        <option value="ruby">Ruby</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+      </select>
+      
+      <br><br>
+      
+      <!-- Radio Buttons for Expertise Level - Only one can be selected -->
+      <p>What's your level of expertise?</p>
+      <input type="radio" id="beginner" name="expertise" value="beginner" aria-labelledby="beginner"> <!-- ARIA label to specify the radio button option for screen readers -->
+      <label for="beginner">Beginner</label>
+      <input type="radio" id="intermediate" name="expertise" value="intermediate" aria-labelledby="intermediate">
+      <label for="intermediate">Intermediate</label>
+      <input type="radio" id="advanced" name="expertise" value="advanced" aria-labelledby="advanced">
+      <label for="advanced">Advanced</label>
+      
+      <br><br>
+      
+      <!-- Checkboxes for Preferred Development Platforms - Multiple selections allowed -->
+      <p>Select your preferred development platforms:</p>
+      <input type="checkbox" id="web" name="platform" value="web" aria-labelledby="web"> <!-- ARIA label for better screen reader compatibility -->
+      <label for="web">Web</label>
+      <input type="checkbox" id="mobile" name="platform" value="mobile" aria-labelledby="mobile">
+      <label for="mobile">Mobile</label>
+      <input type="checkbox" id="desktop" name="platform" value="desktop" aria-labelledby="desktop">
+      <label for="desktop">Desktop</label>
+    </fieldset>
+    
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+
+</html>
